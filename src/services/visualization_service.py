@@ -16,7 +16,7 @@ class VisualizationService:
 
     @staticmethod
     def get_player_image():
-        return pygame.image.load(ASSETS_DIR / "gift.png").convert_alpha()
+        return pygame.image.load(ASSETS_DIR / "santa_hand.png").convert_alpha()
 
     @staticmethod
     def get_dotted_line():
@@ -29,6 +29,10 @@ class VisualizationService:
     @staticmethod
     def get_santa_hand():
         return pygame.image.load(ASSETS_DIR / "santa_hand.png").convert_alpha()
+    
+    @staticmethod
+    def get_gift_icon():
+        return pygame.image.load(ASSETS_DIR / "gift.png").convert_alpha()
 
     @staticmethod
     def get_score_backing():
@@ -60,8 +64,8 @@ class VisualizationService:
 
     @staticmethod
     def load_main_game_displays():
-        pygame.display.set_caption("Don't Touch My Presents")
-        gift = VisualizationService.get_player_image()
+        pygame.display.set_caption("Don't Touch Me")
+        gift = VisualizationService.get_gift_icon()
         pygame.display.set_icon(gift)
 
     @staticmethod
@@ -87,9 +91,9 @@ class VisualizationService:
     def draw_title(screen):
         y = sine(200.0, 1280, 10.0, 100)
         title = VisualizationService.get_title_image()
-        screen.blit(title, (0, y))
+        screen.blit(title, (100, 10))
         holding_gift = VisualizationService.get_holding_gift_image()
-        screen.blit(holding_gift, (0, 320))
+        screen.blit(holding_gift, (100,200 ))
 
     @staticmethod
     def draw_press_key(screen, press_y):
@@ -99,6 +103,6 @@ class VisualizationService:
     @staticmethod
     def draw_main_menu(screen, max_score, press_y):
         VisualizationService.draw_author_credits(screen)
-        VisualizationService.draw_best_score(screen, max_score)
+        # VisualizationService.draw_best_score(screen, max_score)
         VisualizationService.draw_title(screen)
         VisualizationService.draw_press_key(screen, press_y)
