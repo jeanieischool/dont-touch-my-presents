@@ -3,12 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Don't Touch Me!</title>
-  
+  <title>GitHub page as PWA template</title>
+  <link rel="canonical" href="https://jeanieischool.github.io/dont-touch-me/" />
+  <link rel="manifest" href="/dont-touch-me/manifest.webmanifest">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<output></output>
 <body>
+ 
+  <h1>GitHub page as PWA template</h1>
+  <p>
+    This is a web game app. 
+    Make sure to check the README at 
+    the main repo if interested in learning.
+  </p>
 
+  <script>
+      if (navigator.serviceWorker) {
+        navigator.serviceWorker.register (
+          '/dont-touch-me/sw.js',
+          {scope: '/dont-touch-me/'}
+        )
+      }
+  </script>
   <script src="main.py"></script>
 </body>
 </html>
